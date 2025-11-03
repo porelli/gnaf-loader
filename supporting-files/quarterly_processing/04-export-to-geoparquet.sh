@@ -11,7 +11,7 @@ conda activate sedona
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 AWS_PROFILE="minus34"
-OUTPUT_FOLDER="/Users/$(whoami)/tmp/geoscape_202508"
+OUTPUT_FOLDER="/Users/$(whoami)/tmp/geoscape_202511"
 
 echo "---------------------------------------------------------------------------------------------------------------------"
 echo "create geoparquet versions of GNAF and Admin Bdys and upload to AWS S3"
@@ -20,10 +20,10 @@ echo "--------------------------------------------------------------------------
 # delete all existing files
 rm -rf "${OUTPUT_FOLDER}/geoparquet"
 
-python "${SCRIPT_DIR}/../../spark/xx_export_gnaf_and_admin_bdys_to_geoparquet.py" --admin-schema="admin_bdys_202508" --gnaf-schema="gnaf_202508" --output-path="${OUTPUT_FOLDER}/geoparquet"
+python "${SCRIPT_DIR}/../../spark/xx_export_gnaf_and_admin_bdys_to_geoparquet.py" --admin-schema="admin_bdys_202511" --gnaf-schema="gnaf_202511" --output-path="${OUTPUT_FOLDER}/geoparquet"
 
-aws --profile=${AWS_PROFILE} s3 rm s3://minus34.com/opendata/geoscape-202508/geoparquet/ --recursive
-aws --profile=${AWS_PROFILE} s3 sync "${OUTPUT_FOLDER}/geoparquet" "s3://minus34.com/opendata/geoscape-202508/geoparquet" --acl public-read
+aws --profile=${AWS_PROFILE} s3 rm s3://minus34.com/opendata/geoscape-202511/geoparquet/ --recursive
+aws --profile=${AWS_PROFILE} s3 sync "${OUTPUT_FOLDER}/geoparquet" "s3://minus34.com/opendata/geoscape-202511/geoparquet" --acl public-read
 
 
 # disabled as currently only exporting the GDA94 version in WGS84 coordinates
@@ -39,7 +39,7 @@ aws --profile=${AWS_PROFILE} s3 sync "${OUTPUT_FOLDER}/geoparquet" "s3://minus34
 ## delete all existing files
 #rm -rf ${OUTPUT_FOLDER}/geoparquet
 #
-#python ${SCRIPT_DIR}/../../spark/xx_export_gnaf_and_admin_bdys_to_geoparquet.py --admin-schema="admin_bdys_202508_gda2020" --gnaf-schema="gnaf_202508_gda2020" --output-path="${OUTPUT_FOLDER_2020}/geoparquet"
+#python ${SCRIPT_DIR}/../../spark/xx_export_gnaf_and_admin_bdys_to_geoparquet.py --admin-schema="admin_bdys_202511_gda2020" --gnaf-schema="gnaf_202511_gda2020" --output-path="${OUTPUT_FOLDER_2020}/geoparquet"
 #
-#aws --profile=${AWS_PROFILE} s3 rm s3://minus34.com/opendata/geoscape-202508-gda2020/geoparquet/ --recursive
-#aws --profile=${AWS_PROFILE} s3 sync ${OUTPUT_FOLDER_2020}/geoparquet s3://minus34.com/opendata/geoscape-202508-gda2020/geoparquet --acl public-read
+#aws --profile=${AWS_PROFILE} s3 rm s3://minus34.com/opendata/geoscape-202511-gda2020/geoparquet/ --recursive
+#aws --profile=${AWS_PROFILE} s3 sync ${OUTPUT_FOLDER_2020}/geoparquet s3://minus34.com/opendata/geoscape-202511-gda2020/geoparquet --acl public-read

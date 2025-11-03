@@ -6,5 +6,5 @@ COPY (
 				 address, locality_name, postcode, state, locality_postcode, confidence, 
 				 legal_parcel_id, mb_2016_code, mb_2021_code, latitude, longitude,
 				 geocode_type, reliability
-		FROM gnaf_202508.address_principals
+		FROM gnaf_202511.address_principals
 ) TO '/Users/hugh.saalmans/tmp/address_principals.psv' HEADER CSV;
