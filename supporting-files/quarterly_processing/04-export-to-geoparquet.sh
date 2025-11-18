@@ -3,9 +3,9 @@
 # first - activate or create Conda environment with Apache Spark + Sedona
 . "/Users/$(whoami)/git/iag_geo/spark_testing/apache_sedona/01_setup_sedona.sh"
 
-# need a Python 3.6+ environment with Psycopg (run 01_setup_conda_env.sh to create Conda environment)
-conda deactivate
-conda activate sedona
+## need a Python 3.6+ environment with Psycopg (run 01_setup_conda_env.sh to create Conda environment)
+#conda deactivate
+#conda activate sedona
 
 # get the directory this script is running from
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
