@@ -5,7 +5,7 @@ MAIN_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd
 
 cd "${MAIN_SCRIPT_DIR}" || exit
 
-#. 01_setup_conda_env.sh
+. 01_setup_conda_env.sh
 
 . 02-run-gnaf-loader-locality-clean-and-copy-to-aws-s3.sh
 
@@ -15,7 +15,9 @@ cd "${MAIN_SCRIPT_DIR}" || exit
 
 . 04-export-to-geoparquet.sh
 
-#. 05-create-podman-images.sh
+cd "${MAIN_SCRIPT_DIR}" || exit
+
+. 05-create-podman-images.sh
 
 cd "${MAIN_SCRIPT_DIR}" || exit
 
