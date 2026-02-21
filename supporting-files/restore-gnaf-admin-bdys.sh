@@ -10,13 +10,13 @@ psql -d geo -p 5432 -U postgres -c "CREATE EXTENSION IF NOT EXISTS postgis;"
 
 cd /Users/$(whoami)/Downloads
 
-curl --insecure https://minus34.com/opendata/geoscape-202511/gnaf-202511.dmp --output ./gnaf-202511.dmp
-/Applications/Postgres.app/Contents/Versions/14/bin/pg_restore -Fc -d geo -p 5432 -U postgres ./gnaf-202511.dmp
-rm ./gnaf-202511.dmp
+curl --insecure https://minus34.com/opendata/geoscape-202602/gnaf-202602.dmp --output ./gnaf-202602.dmp
+/Applications/Postgres.app/Contents/Versions/14/bin/pg_restore -Fc -d geo -p 5432 -U postgres ./gnaf-202602.dmp
+rm ./gnaf-202602.dmp
 
-curl --insecure https://minus34.com/opendata/geoscape-202511/admin-bdys-202511.dmp --output ./admin-bdys-202511.dmp
-/Applications/Postgres.app/Contents/Versions/14/bin/pg_restore -Fc -d geo -p 5432 -U postgres ./admin-bdys-202511.dmp
-rm ./admin-bdys-202511.dmp
+curl --insecure https://minus34.com/opendata/geoscape-202602/admin-bdys-202602.dmp --output ./admin-bdys-202602.dmp
+/Applications/Postgres.app/Contents/Versions/14/bin/pg_restore -Fc -d geo -p 5432 -U postgres ./admin-bdys-202602.dmp
+rm ./admin-bdys-202602.dmp
 
 duration=$SECONDS
 

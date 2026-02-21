@@ -1,11 +1,11 @@
-"C:\Program Files\PostgreSQL\12\bin\pg_dump" -Fc -d geo -n gnaf_202511 -p 5432 -U postgres > "C:\git\minus34\gnaf-202511.dmp"
-"C:\Program Files\PostgreSQL\12\bin\pg_dump" -Fc -d geo -n admin_bdys_202511 -p 5432 -U postgres > "C:\git\minus34\admin-bdys-202511.dmp"
+"C:\Program Files\PostgreSQL\12\bin\pg_dump" -Fc -d geo -n gnaf_202602 -p 5432 -U postgres > "C:\git\minus34\gnaf-202602.dmp"
+"C:\Program Files\PostgreSQL\12\bin\pg_dump" -Fc -d geo -n admin_bdys_202602 -p 5432 -U postgres > "C:\git\minus34\admin-bdys-202602.dmp"
 
 REM OPTIONAL - copy files to AWS S3 and allow public read access (requires awscli installed)
-REM aws --profile=default s3 cp "C:\git\minus34\gnaf-202511.dmp" s3://minus34.com/opendata/geoscape-202511/gnaf-202511.dmp
-REM aws --profile=default s3api put-object-acl --acl public-read --bucket minus34.com --key opendata/geoscape-202511/gnaf-202511.dmp
+REM aws --profile=default s3 cp "C:\git\minus34\gnaf-202602.dmp" s3://minus34.com/opendata/geoscape-202602/gnaf-202602.dmp
+REM aws --profile=default s3api put-object-acl --acl public-read --bucket minus34.com --key opendata/geoscape-202602/gnaf-202602.dmp
 
-REM aws --profile=default s3 cp "C:\git\minus34\admin-bdys-202511.dmp" s3://minus34.com/opendata/geoscape-202511/admin-bdys-202511.dmp
-REM aws --profile=default s3api put-object-acl --acl public-read --bucket minus34.com --key opendata/geoscape-202511/admin-bdys-202511.dmREM
+REM aws --profile=default s3 cp "C:\git\minus34\admin-bdys-202602.dmp" s3://minus34.com/opendata/geoscape-202602/admin-bdys-202602.dmp
+REM aws --profile=default s3api put-object-acl --acl public-read --bucket minus34.com --key opendata/geoscape-202602/admin-bdys-202602.dmREM
 
 pause
